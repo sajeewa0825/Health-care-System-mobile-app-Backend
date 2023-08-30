@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
-const errorHandler = require('./handler/errorHandler');
 const doctorRoute = require("./module/doctor/doctorRoute")
 
 const app = express();
@@ -16,7 +15,7 @@ require('./model/doctorModel');
 
 app.use(express.json());
 app.use("/doctor",doctorRoute)
-app.use(errorHandler);
+
 
 
 app.listen(3000, () => {
